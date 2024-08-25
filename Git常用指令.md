@@ -6,9 +6,9 @@
 
 #### 1.1.1设置用户信息
 
-git config --global user.name “itcast”
+git config --global user.name “X-yimeng”
 
-git config --global user.email “hello@itcast.cn"
+git config --global user.email “1554251089@qq.com"
 
 #### 1.1.2.查看配置信息
 
@@ -160,47 +160,48 @@ doc/**/*.pdf
 
 ### 3.1将一个新文件夹（与仓库没有关系）中的文件上传到仓库
 
-1）一般操作
+1）本地操作
 
 - 初始化
 
   - git init
-
 - 上传到本地仓库
 
   - add、commit
 
-- 上传到远程仓库
+2）上传到远程仓库
 
-  - ①连接远程仓库
+①连接远程仓库
 
-    - git remote add origin 【SHH地址（在仓库点击[克隆/下载]以获取）】
+- git remote add origin 【SHH地址（在仓库点击[克隆/下载]以获取）】
 
-  - ②push到远程仓库(`git push`)
+②push到远程仓库(`git push`)
 
-    - 问题1——fatal：refusing to merge unrelated histories
+- **问题1——fatal：refusing to merge unrelated histories**
 
-      - ```bash
-        git pull origin master --allow-unrelated-histories
-        ```
+  - ```bash
+    git pull origin main --allow-unrelated-histories
+    ```
 
-        - 此时会自动将仓库pull到文件夹中（强制产生关联）；之后会弹出一个界面，无法操作，没事，直接叉掉
+    - 此时会自动将仓库pull到文件夹中（强制产生关联）；之后会弹出一个界面，无法操作，没事，直接叉掉
 
     - git push
 
-      - 此时会报错，因为没有设置参数，按照提示的写就好了
+    - 此时会报错，因为没有设置参数，按照提示的写就好了
 
-      - ```
-        git push origin main
-        ```
+    - ```
+      git push origin main
+      ```
 
-    - 问题2——[rejected] master -> master (non-fast-forward)”
+- **问题2——[rejected] master -> master (non-fast-forward)”**
+
+  - git pull
+  - git push
+
   
-      - git pull
-      - git push
-  
-  - 总结
-  
-    - 两个问题的本质都是：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。
-    - 解决问题的方法：先把远程仓库pull过来，使分支在一起，merge后再push
+
+总结
+
+- 两个问题的本质都是：git仓库中已经有一部分代码，所以它不允许你直接把你的代码覆盖上去。
+- 解决问题的方法：先把远程仓库pull过来，使分支在一起，merge后再push
 
