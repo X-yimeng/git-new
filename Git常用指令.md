@@ -151,10 +151,14 @@ doc/**/*.pdf
 
 **此操作是先初始化本地库，然后与已创建的远程库进行对接。【让本地仓库认识远程仓库】**
 
-- 命令： git remote add <远端名称> <仓库路径>
+-  `git remote add <远端名称> <仓库路径>`
   - 远端名称，默认是origin，取决于远端服务器设置
   - 仓库路径，从远端服务器获取此URL
   - 例如: git remote add origin git@gitee.com:czbk_zhang_meng/git_test.git
+
+### 2.2.2 删除远程仓库
+
+- `git remote rm <仓库名>`
 
 ## 3.问题实操
 
